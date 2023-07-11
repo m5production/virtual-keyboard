@@ -1,0 +1,77 @@
+:root{
+  min-height: 100vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+$gap-btw-keys: 10px;
+
+.textarea-user-input {
+  width: 100%;
+
+  font-size: 20px;
+}
+
+.keyboard {
+  padding: $gap-btw-keys;
+  
+  display: flex;
+  flex-direction: column;
+  gap: $gap-btw-keys;
+
+  background-color: #ff8912;
+  
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.keyboard--row {
+  display: flex;
+  gap: $gap-btw-keys;
+}
+
+$keySize: 40px;
+.keyboard--key {
+  width: $keySize;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  aspect-ratio: 1;
+
+  font-size: clamp(10px, calc(100vw/40), 16px);
+
+  background-color: #c1c1c1;
+  border-radius: 4px;
+
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgb(103, 102, 102);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.no-letter-key {
+  min-height: $keySize;
+  min-width: fit-content;
+  flex-grow: 1;
+  background-color: #a0a0a0;
+  aspect-ratio: unset;
+}
+
+.active {
+  background-color: black;
+  color: white;
+  border-radius: calc($keySize / 2);
+}
